@@ -363,8 +363,12 @@ namespace RandomSequenceGeneratorTestApp
       }
       else
       {
-        generator.NewSeed(txtSeed.Text.GetHashCode());
-        generator.SkipItems((int)nudSequenceStart.Value);
+        int seed = txtSeed.Text.GetHashCode();
+        if (seed != generator.Seed)
+        {
+          generator.NewSeed(seed);
+        }
+        generator.JumpToItem((int)nudSequenceStart.Value - 1);
       }
 
       if (generator.ItemsCount > 0)

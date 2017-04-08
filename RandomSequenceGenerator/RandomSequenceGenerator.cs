@@ -66,7 +66,7 @@ namespace RandomSequenceGenerator
         NewSeed(_seed);
       }
       
-      SkipItems(index);
+      SkipItems(index - _pass);
     }
 
     /// <summary>
@@ -76,6 +76,8 @@ namespace RandomSequenceGenerator
     {
       for (int i = _pass; i < indexesToPass; i++)
         Next();
+
+      _pass += indexesToPass;
     }
 
     #endregion
@@ -258,6 +260,8 @@ namespace RandomSequenceGenerator
       {
         index = (index * -1) - 1;
       }
+
+      _pass++;
 
       return _items[index];
     }
