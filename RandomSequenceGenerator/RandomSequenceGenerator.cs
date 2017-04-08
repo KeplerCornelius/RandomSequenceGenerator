@@ -16,11 +16,17 @@ namespace RandomSequenceGenerator
     private int _weightSum; //cachied sum of all item's weights
     private bool _updateCumulativeWeights; //flag to update cumulative weights array, should be set to TRUE every time list of items or some if it's weights are changed
 
+    /// <summary>
+    /// Seed with which pRNG was initiated
+    /// </summary>
     public int Seed
     {
       get { return _seed; }
     }
 
+    /// <summary>
+    /// Amount of random numbers which was generated since the last pRND initialization
+    /// </summary>
     public int Pass
     {
       get { return _pass; }
@@ -31,9 +37,9 @@ namespace RandomSequenceGenerator
       get { return _items.Count; }
     }
 
-    public RandomSequenceGenerator()
+    public RandomSequenceGenerator(int seed)
     {
-      NewSeed();
+      NewSeed(seed);
 
       _items = new List<T>();
       _weights = new List<int>();
@@ -41,6 +47,8 @@ namespace RandomSequenceGenerator
       _weightSum = 0;
       _updateCumulativeWeights = false;
     }
+
+    public RandomSequenceGenerator() : this(GetUniqueInt()) { }
 
     #region [pRNG manipulation]
 
@@ -53,7 +61,7 @@ namespace RandomSequenceGenerator
 
     public void NewSeed()
     {
-      NewSeed((int)DateTime.Now.ToBinary()); //TODO: should I change (int)DateTime.Now.ToBinary() to something better?
+      NewSeed(GetUniqueInt());
     }
 
     /// <summary>
@@ -296,6 +304,11 @@ namespace RandomSequenceGenerator
       }
       
       _updateCumulativeWeights = false;
+    }
+
+    private static int GetUniqueInt()
+    {
+      return (int)DateTime.Now.ToBinary(); //TODO: should I change (int)DateTime.Now.ToBinary() to something better?
     }
 
     #endregion
