@@ -65,6 +65,7 @@
       this.label3 = new System.Windows.Forms.Label();
       this.txtSeed = new System.Windows.Forms.TextBox();
       this.btnGetRandomSeed = new System.Windows.Forms.Button();
+      this.chkAdvancedItems = new System.Windows.Forms.CheckBox();
       ((System.ComponentModel.ISupportInitialize)(this.nudSequenceLength)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.nudSequenceStart)).BeginInit();
       this.tabControl.SuspendLayout();
@@ -303,6 +304,7 @@
       // 
       // tabPage2
       // 
+      this.tabPage2.Controls.Add(this.chkAdvancedItems);
       this.tabPage2.Controls.Add(this.label5);
       this.tabPage2.Controls.Add(this.label4);
       this.tabPage2.Controls.Add(this.btnSplitInput);
@@ -325,7 +327,7 @@
       // label5
       // 
       this.label5.AutoSize = true;
-      this.label5.Location = new System.Drawing.Point(102, 32);
+      this.label5.Location = new System.Drawing.Point(102, 55);
       this.label5.Name = "label5";
       this.label5.Size = new System.Drawing.Size(44, 13);
       this.label5.TabIndex = 14;
@@ -334,7 +336,7 @@
       // label4
       // 
       this.label4.AutoSize = true;
-      this.label4.Location = new System.Drawing.Point(6, 32);
+      this.label4.Location = new System.Drawing.Point(6, 55);
       this.label4.Name = "label4";
       this.label4.Size = new System.Drawing.Size(56, 13);
       this.label4.TabIndex = 13;
@@ -342,7 +344,7 @@
       // 
       // btnSplitInput
       // 
-      this.btnSplitInput.Location = new System.Drawing.Point(143, 4);
+      this.btnSplitInput.Location = new System.Drawing.Point(143, 27);
       this.btnSplitInput.Name = "btnSplitInput";
       this.btnSplitInput.Size = new System.Drawing.Size(43, 23);
       this.btnSplitInput.TabIndex = 12;
@@ -374,14 +376,14 @@
             this.index,
             this.item,
             this.weight});
-      this.dgvItems.Location = new System.Drawing.Point(6, 56);
+      this.dgvItems.Location = new System.Drawing.Point(6, 79);
       this.dgvItems.MultiSelect = false;
       this.dgvItems.Name = "dgvItems";
       this.dgvItems.ReadOnly = true;
       this.dgvItems.RowHeadersVisible = false;
       this.dgvItems.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
       this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-      this.dgvItems.Size = new System.Drawing.Size(180, 134);
+      this.dgvItems.Size = new System.Drawing.Size(180, 111);
       this.dgvItems.TabIndex = 10;
       this.dgvItems.SelectionChanged += new System.EventHandler(this.dgvItems_SelectionChanged);
       // 
@@ -424,7 +426,7 @@
       // 
       // txtInputSeparator
       // 
-      this.txtInputSeparator.Location = new System.Drawing.Point(63, 29);
+      this.txtInputSeparator.Location = new System.Drawing.Point(63, 52);
       this.txtInputSeparator.Name = "txtInputSeparator";
       this.txtInputSeparator.Size = new System.Drawing.Size(33, 20);
       this.txtInputSeparator.TabIndex = 6;
@@ -459,7 +461,7 @@
       // 
       // nudInputWeight
       // 
-      this.nudInputWeight.Location = new System.Drawing.Point(147, 30);
+      this.nudInputWeight.Location = new System.Drawing.Point(147, 53);
       this.nudInputWeight.Minimum = new decimal(new int[] {
             1,
             0,
@@ -476,7 +478,7 @@
       // 
       // txtInput
       // 
-      this.txtInput.Location = new System.Drawing.Point(6, 6);
+      this.txtInput.Location = new System.Drawing.Point(6, 29);
       this.txtInput.Multiline = true;
       this.txtInput.Name = "txtInput";
       this.txtInput.Size = new System.Drawing.Size(133, 20);
@@ -521,6 +523,17 @@
       this.btnGetRandomSeed.Text = "?";
       this.btnGetRandomSeed.UseVisualStyleBackColor = true;
       this.btnGetRandomSeed.Click += new System.EventHandler(this.btnGetRandomSeed_Click);
+      // 
+      // chkAdvancedItems
+      // 
+      this.chkAdvancedItems.AutoSize = true;
+      this.chkAdvancedItems.Location = new System.Drawing.Point(6, 6);
+      this.chkAdvancedItems.Name = "chkAdvancedItems";
+      this.chkAdvancedItems.Size = new System.Drawing.Size(102, 17);
+      this.chkAdvancedItems.TabIndex = 15;
+      this.chkAdvancedItems.Text = "Advanced items";
+      this.chkAdvancedItems.UseVisualStyleBackColor = true;
+      this.chkAdvancedItems.CheckedChanged += new System.EventHandler(this.chkAdvancedItems_CheckedChanged);
       // 
       // frmMain
       // 
@@ -596,6 +609,7 @@
     private System.Windows.Forms.Button btnSplitInput;
     private System.Windows.Forms.Label label5;
     private System.Windows.Forms.Label label4;
+    private System.Windows.Forms.CheckBox chkAdvancedItems;
   }
 }
 

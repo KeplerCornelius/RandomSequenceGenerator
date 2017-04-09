@@ -143,6 +143,11 @@ namespace RandomSequenceGeneratorTestApp
 
     #region[advanced]
 
+    private void chkAdvancedItems_CheckedChanged(object sender, EventArgs e)
+    {
+      update = true;
+    }
+
     private void btnSplitInput_Click(object sender, EventArgs e)
     {
       string[] newInput;
@@ -340,11 +345,12 @@ namespace RandomSequenceGeneratorTestApp
         generator.Add(SplitByLength(txtCustomChars.Text));
       }
 
-      update = false;
-
-      for (int i = 0; i < itemsAdvanced.Count; i++)
+      if (chkAdvancedItems.Checked)
       {
-        generator.Add(itemsAdvanced[i], weightsAdvanced[i]);
+        for (int i = 0; i < itemsAdvanced.Count; i++)
+        {
+          generator.Add(itemsAdvanced[i], weightsAdvanced[i]);
+        }
       }
 
       update = false;
@@ -352,7 +358,7 @@ namespace RandomSequenceGeneratorTestApp
 
     private void Generate()
     {
-      if (update || update)
+      if (update)
       {
         UpdateItems();
       }
